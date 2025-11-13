@@ -21,7 +21,7 @@ train:
 
 eval:
 	echo "## Model Metrics" > report.md
-	cat ./Results/metrics.txt >> report.md
+	cat ./src/Results/metrics.txt >> report.md
 
 	echo '\n## Confusion Matrix Plot' >> report.md
 	echo '![Confusion Matrix](./Results/model_results.png)' >> report.md
@@ -42,8 +42,8 @@ hf-login:
 
 push-hub:
 	hf upload Tsmorz/Drug-Classification ./src/App --repo-type=space --commit-message="Sync App files"
-	hf upload Tsmorz/Drug-Classification ./Model /Model --repo-type=space --commit-message="Sync Model"
-	hf upload Tsmorz/Drug-Classification ./Results /Metrics --repo-type=space --commit-message="Sync Model"
+	hf upload Tsmorz/Drug-Classification ./src/Model /Model --repo-type=space --commit-message="Sync Model"
+	hf upload Tsmorz/Drug-Classification ./src/Results /Metrics --repo-type=space --commit-message="Sync Model"
 
 deploy:
 	make hf-login push-hub
