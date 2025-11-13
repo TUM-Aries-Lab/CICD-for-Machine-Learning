@@ -22,4 +22,4 @@ From training to evaluation, the entire process will be automated using GitHub a
 |------------------------|----------|----------|
 | RandomForestClassifier | 97.0%    | 94.0%    |
 
-![CM](./src/Results/model_results.png)
+![CM](src/results/model_results.png)
