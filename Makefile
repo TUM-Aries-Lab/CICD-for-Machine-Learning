@@ -21,7 +21,7 @@ train:
 
 eval:
 	echo "## Model Metrics" > report.md
-	cat ./src/Results/metrics.txt >> report.md
+	cat ./src/results/metrics.txt >> report.md
 
 	echo '\n## Confusion Matrix Plot' >> report.md
 	echo '![Confusion Matrix](./Results/model_results.png)' >> report.md
