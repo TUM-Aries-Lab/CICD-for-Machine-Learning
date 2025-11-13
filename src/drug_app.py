@@ -1,6 +1,9 @@
+"""Docstring for drug_app.py."""
+
+import warnings
+
 import gradio as gr
 import skops.io as sio
-import warnings
 from sklearn.exceptions import InconsistentVersionWarning
 
 # Suppress the version warnings
@@ -33,6 +36,7 @@ def predict_drug(age, sex, blood_pressure, cholesterol, na_to_k_ratio):
 
     Returns:
         str: Predicted drug label
+
     """
     features = [age, sex, blood_pressure, cholesterol, na_to_k_ratio]
     predicted_drug = pipe.predict([features])[0]
@@ -56,10 +60,15 @@ examples = [
     [50, "M", "HIGH", "HIGH", 34],
 ]
 
-
+url = "https://www.datacamp.com/tutorial/ci-cd-for-machine-learning"
 title = "Drug Classification"
 description = "Enter the details to correctly identify Drug type?"
-article = "This app is a part of the **[Beginner's Guide to CI/CD for Machine Learning](https://www.datacamp.com/tutorial/ci-cd-for-machine-learning)**. It teaches how to automate training, evaluation, and deployment of models to Hugging Face using GitHub Actions."
+article = (
+    f"This app is a part of the "
+    f"**[Beginner's Guide to CI/CD for Machine Learning]({url})**. "
+    "It teaches how to automate training, evaluation, and deployment of models "
+    "to Hugging Face using GitHub Actions."
+)
 
 
 gr.Interface(

@@ -25,8 +25,6 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
-.vscode
-./flagged
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -42,11 +40,11 @@ pip-delete-this-directory.txt
 htmlcov/
 .tox/
 .nox/
+../.coverage
+.coveragerc
 .coverage
-.coverage.*
 .cache
 nosetests.xml
-coverage.xml
 *.cover
 *.py,cover
 .hypothesis/
@@ -108,8 +106,10 @@ ipython_config.py
 #pdm.lock
 #   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
 #   in version control.
-#   https://pdm.fming.dev/#use-with-ide
+#   https://pdm.fming.dev/latest/usage/project/#working-with-version-control
 .pdm.toml
+.pdm-python
+.pdm-build/
 
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
 __pypackages__/
@@ -159,4 +159,13 @@ cython_debug/
 #  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-.idea/
+.idea
+.idea?
+.DS_Store
+.DS_Store?
+
+# pixi environments
+.pixi
+*.egg-info
+
+/logs/log_*

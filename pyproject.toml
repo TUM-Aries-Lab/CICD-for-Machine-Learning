@@ -21,7 +21,7 @@ ruff = "^0.6.9"
 mypy = "^1.11"
 pytest = "^8.3"
 pytest-cov = "^6.0"
-pre-commit = "^4.1.0"
+pre-commit = "^4.4.0"
 poetry-core = "^2.1.2"
 coveralls = "^4.0.1"
 
