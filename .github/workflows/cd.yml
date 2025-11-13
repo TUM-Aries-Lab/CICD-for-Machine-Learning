@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Deployment To Hugging Face
+      - name: Deployment To Tsmorz Hugging Face
         env:
           HF: ${{ secrets.HF }}
         run: make deploy HF=$HF
