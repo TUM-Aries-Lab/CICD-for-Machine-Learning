@@ -41,7 +41,7 @@ hf-login:
 	hf auth login --token $(HF) --add-to-git-credential
 
 push-hub:
-	hf upload Tsmorz/Drug-Classification ./App --repo-type=space --commit-message="Sync App files"
+	hf upload Tsmorz/Drug-Classification ./src/App --repo-type=space --commit-message="Sync App files"
 	hf upload Tsmorz/Drug-Classification ./Model /Model --repo-type=space --commit-message="Sync Model"
 	hf upload Tsmorz/Drug-Classification ./Results /Metrics --repo-type=space --commit-message="Sync Model"
 
