@@ -50,14 +50,13 @@ pipe = Pipeline(
 # Training
 pipe.fit(X_train, y_train)
 
-
 # Model Evaluation
 predictions = pipe.predict(X_test)
 accuracy = accuracy_score(y_test, predictions)
 f1 = f1_score(y_test, predictions, average="macro")
-
-logger.info("Accuracy:", str(round(accuracy, 2) * 100) + "%", "F1:", round(f1, 2))
-
+logger.info(
+    f"Accuracy: {accuracy * 100:0.2f}%, F1: {f1:0.2f}",
+)
 
 # Confusion Matrix Plot
 predictions = pipe.predict(X_test)
