@@ -4,7 +4,7 @@ OS := $(shell uname -s)
 init:
 	python3 -m venv .venv
 	poetry install --with dev
-	pre-commit install
+	poetry run pre-commit install
 	poetry env info
 	@echo "Created virtual environment"
 
@@ -12,12 +12,12 @@ test:
 	poetry run pytest --cov=src/ --cov-report=term-missing --no-cov-on-fail  --cov-report=xml --cov-fail-under=40
 
 format:
-	ruff format
-	ruff check --fix
+	poetry run ruff format
+	poetry run ruff check --fix
 	poetry run mypy src/ tests/ --ignore-missing-imports
 
 train:
-	python src/train.py
+	poetry run python src/train.py
 
 eval:
 	echo "## Model Metrics" > report.md
