@@ -15,8 +15,6 @@ From training to evaluation, the entire process will be automated using GitHub a
 > **Follow the tutorial:** https://www.datacamp.com/tutorial/ci-cd-for-machine-learning
 
 ## Pipeline
-
-
 ![CICD](./asset/CICD-pipeline.png)
 
 ## Results
