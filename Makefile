@@ -3,15 +3,7 @@ OS := $(shell uname -s)
 install:
 	pip install --upgrade pip
 	pip install -r requirements.txt
-ifeq ($(OS),Darwin)
-	@echo "Installing dependencies for macOS"
-	brew install huggingface-cli
-else ifeq ($(OS),Linux)
-	@echo "Installing dependencies for Linux"
-	sudo apt install something
-else
-	@echo "Unsupported OS: $(OS)"
-endif
+
 
 format:	
 	black *.py 
@@ -35,6 +27,15 @@ update-branch:
 	git push --force origin HEAD:update
 
 hf-login:
+ifeq ($(OS),Darwin)
+	@echo "Installing dependencies for macOS"
+	brew install huggingface-cli
+else ifeq ($(OS),Linux)
+	@echo "Installing dependencies for Linux"
+	sudo apt install something
+else
+	@echo "Unsupported OS: $(OS)"
+endif
 	git pull origin update
 	git switch update
 	hf auth login --token $(HF) --add-to-git-credential
