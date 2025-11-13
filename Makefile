@@ -17,7 +17,7 @@ format:
 	poetry run mypy src/ tests/ --ignore-missing-imports
 
 train:
-	python train.py
+	python src/train.py
 
 eval:
 	echo "## Model Metrics" > report.md

@@ -171,7 +171,7 @@ jobs:
           virtualenvs-in-project: true
           installer-parallel: true
       - name: Install Packages
-        run: poetry install --with dev
+        run: poetry install --without dev
       - name: Train
         run: make train
       - name: Evaluation
