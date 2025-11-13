@@ -46,7 +46,7 @@ push-hub:
 	hf upload Tsmorz/Drug-Classification ./Results /Metrics --repo-type=space --commit-message="Sync Model"
 
 deploy:
-	hf-login push-hub
+	make hf-login push-hub
 
 all:
 	install format train eval update-branch deploy
